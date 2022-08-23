@@ -4,7 +4,7 @@ import jobsRouter from './v1/jobs';
 import authMiddleware from '../app/middleware/auth'
 
 const routes = (app) => {
-   app.use('/', (res, req) => {
+   app.get('/', (res, req) => {
       res.send('Welcome to the jobs api');
    })
    app.use('/api/v1/auth', authRouter);
