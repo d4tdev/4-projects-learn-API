@@ -1,3 +1,3 @@
-# 4-projects-learn-API
+# project 3: JWT Basics
 
 learn about json web token
