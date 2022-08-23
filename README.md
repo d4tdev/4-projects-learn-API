@@ -1,3 +1,3 @@
-# project 3: JWT Basics
+# Project 3: JWT Basics
 
 learn about json web token
