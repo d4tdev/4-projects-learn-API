@@ -9,6 +9,11 @@ import cors from 'cors';
 import xss from 'xss-clean';
 import rateLimit from 'express-rate-limit';
 
+// swagger
+import swaggerUI from 'swagger-ui-express';
+import YAML from 'yamljs';
+const swaggerDocument = YAML.load('./swagger.yaml');
+
 import routes from './routes/index'
 import notFound from './app/middleware/notFound';
 import errorHandler from './app/middleware/errorHandler';
@@ -29,6 +34,7 @@ app.use(cors());
 app.use(xss());
 
 routes(app);
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use(errorHandler);
 app.use(notFound);
 
