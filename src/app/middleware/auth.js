@@ -4,7 +4,7 @@ import { UnauthenticatedError } from '../../config/errors';
 const authenticationMiddleware = async (req, res, next) => {
 	const authHeader = req.headers.authorization;
 
-	if (!authHeader || !authHeader.startWith('Bearer')) {
+	if (!authHeader || !authHeader.startsWith('Bearer ')) {
 		throw new UnauthenticatedError('Please provide valid token');
 	}
 
@@ -20,4 +20,4 @@ const authenticationMiddleware = async (req, res, next) => {
 	}
 };
 
-export default authenticationMiddleware ;
+export default authenticationMiddleware;
